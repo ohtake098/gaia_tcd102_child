@@ -1,0 +1,123 @@
+@import 'cast-single';
+
+// アイドルIKUSEI劇場 スケジュールセクション
+// 変数定義
+$primary-color: #e3007d;
+$text-dark: #333333;
+$text-white: #ffffff;
+$padding-default: 12px;
+$padding-mobile: 8px;
+
+// ========================================
+// ヘッダーセクション
+// ========================================
+.ikusei-schedule-header {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+
+  &__title {
+    font-family: var(--tcd-font-type1) !important;
+    font-size: 36px !important;
+    font-weight: bold !important;
+    color: $primary-color !important;
+    margin-bottom: 0 !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  &__subtitle {
+    font-size: 16px !important;
+    color: $text-dark !important;
+    margin: 0 !important;
+  }
+
+  // レスポンシブ対応
+  @media (max-width: 600px) {
+    margin-bottom: 30px !important;
+
+    &__title {
+      font-size: 24px !important;
+    }
+
+    &__subtitle {
+      font-size: 14px !important;
+    }
+  }
+}
+
+// ========================================
+// スケジュールテーブル
+// ========================================
+.schedule-table {
+  border-collapse: separate!important;
+  border-spacing: 0!important;
+  width: 70%!important;
+  border: none;
+  overflow: hidden;
+  margin: 0 auto!important;
+
+  th,
+  td {
+    padding: $padding-default;
+    text-align: center;
+    border: none;
+  }
+
+  // 見出し行
+  .header-row {
+    th,
+    td {
+      background-color: transparent;
+      color: $text-white;
+      font-weight: bold;
+      border: none;
+      padding: $padding-default;
+    }
+
+    // 左端の空セルは背景なし
+    td:first-child {
+      background-color: transparent;
+    }
+  }
+
+  // 本文行
+  .content-row {
+    td {
+      background-color: transparent;
+      color: $text-dark;
+      border: none;
+      padding: $padding-default;
+    }
+
+    // 左列（項目名）を少し強調
+    td:first-child {
+      font-weight: 600;
+    }
+  }
+
+  // レスポンシブ対応
+  @media (max-width: 600px) {
+    th,
+    td {
+      padding: $padding-mobile;
+      font-size: 14px;
+    }
+  }
+}
+
+// ========================================
+// バッジスタイル（1部・2部・3部）
+// ========================================
+.schedule-badge {
+  display: inline-block;
+  background-color: $primary-color;
+  color: $text-white;
+  font-weight: bold;
+  padding:0.5rem 4rem;
+  border-radius: 8px;
+
+  // レスポンシブ対応
+  @media (max-width: 600px) {
+    padding: 0.4rem 1rem;
+    font-size: 14px;
+  }
+}
